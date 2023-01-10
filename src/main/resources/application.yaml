@@ -1,0 +1,42 @@
+#Конфигурация mySQL
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/search_engine?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+
+#Служебная информация и список сайтов для индексации
+config:
+  webinterface login: root
+  webinterfacepassword: 1234
+  prefix: search_
+  agent: Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
+  webinterface: /admin
+  site:
+
+    - url: https://skillbox.ru
+      name: skillbox
+    - url: https://unost-cinema.ru
+      name: kinoteatr unost
+    - url: http://www.kremlin.ru
+      name: kremlinsite
+    - url: https://ipfran.ru
+      name: ipfran
+    - url: https://panorama.pub
+      name: panorama
+    - url: https://nikoartgallery.com
+      name: nikoart
+    - url: https://et-cetera.ru/mobile
+      name: et-cetera
+    - url: https://www.lutherancathedral.ru
+      name: lutheran cathedral
+    - url: https://dombulgakova.ru
+      name: dom bulgakova
+    - url: https://www.svetlovka.ru
+      name: svetlovka
+
+
