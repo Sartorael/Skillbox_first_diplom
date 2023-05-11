@@ -1,42 +1,47 @@
-#Конфигурация mySQL
+server:
+  port: 8080
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/search_engine?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
     username: root
     password: 1234
+    url: jdbc:mysql://localhost:3306/search_engine?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: create
+    show-sql: false
 
-
-#Служебная информация и список сайтов для индексации
 config:
+  userAgent: Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
+  referrer: http://www.google.com
   webinterface login: root
   webinterfacepassword: 1234
-  prefix: search_
-  agent: Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
   webinterface: /admin
-  site:
-
-    - url: https://skillbox.ru
-      name: skillbox
-    - url: https://unost-cinema.ru
-      name: kinoteatr unost
-    - url: http://www.kremlin.ru
-      name: kremlinsite
-    - url: https://ipfran.ru
+  sites:
+    - url: http://www.playback.ru/
+      name: PlayBack.Ru
+    - url: https://volochek.life/
+      name: volochek
+    - url: http://radiomv.ru/
+      name: radiomv
+    - url: https://ipfran.ru/
       name: ipfran
-    - url: https://panorama.pub
-      name: panorama
-    - url: https://nikoartgallery.com
-      name: nikoart
-    - url: https://et-cetera.ru/mobile
+    - url: https://dimonvideo.ru/
+      name: dimonvideo
+    - url: https://nikoartgallery.com/
+      name: nikoartgallery
+    - url: https://et-cetera.ru/mobile/
       name: et-cetera
-    - url: https://www.lutherancathedral.ru
-      name: lutheran cathedral
-    - url: https://dombulgakova.ru
-      name: dom bulgakova
-    - url: https://www.svetlovka.ru
+    - url: https://www.lutherancathedral.ru/
+      name: lutherancathedral
+    - url: https://dombulgakova.ru/
+      name: dombulgakova
+    - url: https://www.svetlovka.ru/
       name: svetlovka
+    - url: https://www.skillbox.ru
+      name: Skillbox
 
 
